@@ -16,7 +16,7 @@ const ChapterPageid = ({ params }: pageProps) => {
 
   useEffect(() => {
     const fetchChapter = axios
-      .get(`http://localhost:3001/api/chapters/${params.chapterId}`)
+      .get(`http://localhost:3001/api/chapter/${params.chapterId}`)
       .then((res) => {
         setChapter(res.data);
       })

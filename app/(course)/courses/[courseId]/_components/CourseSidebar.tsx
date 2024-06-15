@@ -17,7 +17,7 @@ export const CourseSidebar = ({ course }: CourseSidebarProps) => {
 
   useEffect(() => {
     const fetchCourses = axios
-      .get(`http://localhost:3001/api/courses/chapters/${params.courseId}`)
+      .get(`http://localhost:3001/api/chapters/${params.courseId}`)
       .then((res) => {
         setChapters(res.data);
       })

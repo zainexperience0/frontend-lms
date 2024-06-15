@@ -35,7 +35,7 @@ const ChapterIdPage = ({ params: { courseId, chapterId } }: pageProps) => {
 
   useEffect(() => {
     const fetchChapter = axios
-      .get(`http://localhost:3001/api/chapters/${chapterId}`)
+      .get(`http://localhost:3001/api/chapter/${chapterId}`)
       .then((res) => {
         console.log(res.data);
         setChapter(res.data);
@@ -56,7 +56,7 @@ const ChapterIdPage = ({ params: { courseId, chapterId } }: pageProps) => {
 
     setLoading(true);
     axios
-      .put(`http://localhost:3001/api/chapter/edit/${chapterId}`, {
+      .put(`http://localhost:3001/api/chapter/${chapterId}`, {
         title: fields.title,
         description: fields.description,
         videoUrl: fields.videoUrl,

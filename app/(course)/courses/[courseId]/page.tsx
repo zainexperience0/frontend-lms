@@ -32,6 +32,12 @@ const CoursePage = ({ params }: pageProps) => {
         <p className="text-lg font-semibold">{course.description}</p>
         </div>
       </div>
+      <div className="w-full h-full">
+        <iframe
+      src={`https://docs.google.com/gview?url=${course.attachments}&embedded=true`}
+      className="w-full h-full"
+    ></iframe>
+        </div>
     </div>
   );
 };

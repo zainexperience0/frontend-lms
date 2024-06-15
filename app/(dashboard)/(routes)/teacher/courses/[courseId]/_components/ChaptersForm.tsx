@@ -25,15 +25,15 @@ export const ChaptersForm = ({ courseId }: ChaptersFormProps) => {
   };
 
   useEffect(() => {
-    const fetchCourses = axios
-      .get(`http://localhost:3001/api/courses/chapters/${courseId}`)
+    const fetchChapters = axios
+      .get(`http://localhost:3001/api/chapters/${courseId}`)
       .then((res) => {
         setChapters(res.data);
       })
       .catch((err) => {
         console.error(err);
       });
-    fetchCourses;
+    fetchChapters;
   }, [courseId]);
 
   const onSubmit = () => {
@@ -91,6 +91,7 @@ export const ChaptersForm = ({ courseId }: ChaptersFormProps) => {
           </div>
         </>
       )}
+      {chapters.length === 0 && <p className="text-center text-muted-foreground">No chapters found</p>}
       {chapters.map((chapter) => (
         <div
           key={chapter.id}

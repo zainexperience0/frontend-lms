@@ -67,16 +67,16 @@ export const columns: ColumnDef<Course>[] = [
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <Link href={`/teacher/courses/${id}`}>
               <DropdownMenuItem>
+            <Link href={`/teacher/courses/${id}`} className="flex items-center">
                 <Pencil className="h-4 w-4 mr-2"/>
                 Edit
+            </Link>
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => onDelete(id)}>
                 <Trash className="h-4 w-4 mr-2"/>
                 Delete
               </DropdownMenuItem>
-            </Link>
           </DropdownMenuContent>
         </DropdownMenu>
       );
